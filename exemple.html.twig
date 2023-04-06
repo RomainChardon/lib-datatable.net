@@ -1,0 +1,20 @@
+{% block css %}<link rel="stylesheet" href="{{ asset('admin/assets/css/datatables.css') }}" />{% endblock %}
+
+
+{# Mon tableau portant l'id 'datatable' #}
+
+
+{% block javascript %}
+    <script src="{{ asset('admin/assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/datatables.js') }}"></script>
+    <script>
+        let table = new DataTable('#datatable', {
+             language: {
+                url: "{{ asset('admin/assets/json/traduction.french.json') }}",
+             }
+        });
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+    </script>
+{% endblock %}
